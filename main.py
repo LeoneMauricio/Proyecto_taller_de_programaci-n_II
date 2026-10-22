@@ -1,16 +1,13 @@
-#import db 
+#from db import crear_tabla
 from tkinter import *
-from tkinter import messagebox
-#db.crear_tabla()
+from agregar import ventana_agregar
+#crear_tabla()
 
 def ventana_producto():
     ventana = Tk()
     ventana.title("Mis productos")
     ventana.geometry("500x500")    
-def ventana_agregar():
-    ventana = Tk()
-    ventana.title("Agregar productos")
-    ventana.geometry("500x500") 
+
 def ventana_eliminar():
     ventana = Tk()
     ventana.title("Eliminar productos")
