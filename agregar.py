@@ -24,6 +24,8 @@ def ventana_agregar():
     label_precio.pack()
     entrada_precio = Entry(ventana)
     entrada_precio.pack()
+    def volver():
+        ventana.destroy()
     def guardar():
         nom = entrada_nombre.get()
         des = entrada_descripcion.get()
@@ -44,9 +46,16 @@ def ventana_agregar():
         entrada_nombre.delete(0,END)
         entrada_descripcion.delete(0,END)
         entrada_precio.delete(0,END)
-    botonAgregar = Button(
+    
+    boton_agregar = Button(
         ventana,
         text="Agregar",
         command= guardar
     )
-    botonAgregar.pack(pady=5)
+    boton_agregar.pack(pady=5)
+    boton_volver = Button(
+        ventana,
+        text="Volver al menu",
+        command= volver
+    )
+    boton_volver.pack(pady=5)

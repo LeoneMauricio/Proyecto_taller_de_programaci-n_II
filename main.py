@@ -1,8 +1,8 @@
-from db import *
+from db import crear_tabla
 from tkinter import *
 from agregar import ventana_agregar
 from actualizar import ventana_actualizar
-from actualizar import *
+from eliminar import ventana_eliminar
 
 #crear_tabla()
 
@@ -10,15 +10,6 @@ def ventana_producto():
     ventana = Tk()
     ventana.title("Mis productos")
     ventana.geometry("500x500")    
-
-def ventana_eliminar():
-    ventana = Tk()
-    ventana.title("Eliminar productos")
-    ventana.geometry("500x500") 
-def ventana_modificar():
-    ventana = Tk()
-    ventana.title("Modificar productos")
-    ventana.geometry("500x500") 
 
 ventana_principal = Tk()
 ventana_principal.title("Registros de Productos")

@@ -33,7 +33,9 @@ def eliminar(id):
     cursor = con.cursor()
     cursor.execute("DELETE FROM productos WHERE id = ?", (id,))
     con.commit()
+    filas = cursor.rowcount
     con.close()
+    return filas
 def actualizar(nom, des, prec, id_producto):
     con = conexion()
     cursor = con.cursor()

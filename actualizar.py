@@ -28,7 +28,8 @@ def ventana_actualizar():
     label_precio.pack()
     entrada_precio = Entry(ventana)
     entrada_precio.pack()
-    
+    def volver():
+        ventana.destroy()
     def buscar_producto():
         producto = obtener_por_id(entrada_id.get())
         
@@ -77,14 +78,15 @@ def ventana_actualizar():
             actualizar(nom,des,prec,id_producto)
             #messagebox.showinfo("Correcto","Producto Acualizado", parent=ventana)
         
-    botonActualizar = Button(
+    boton_actualizar = Button(
         ventana,
         text="Actualizar",
         command= modificar
         )
-    botonActualizar.pack(pady=5)
-    
-    
-    
-    
-    ventana.mainloop()
+    boton_actualizar.pack(pady=5)
+    boton_volver = Button(
+        ventana,
+        text="Volver al menu",
+        command= volver
+    )
+    boton_volver.pack(pady=5)
