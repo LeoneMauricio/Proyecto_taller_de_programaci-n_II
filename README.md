@@ -8,10 +8,10 @@ Lista de tareas:
     - Entry.
 - Funciones:
     - Create.
-    - Update.
+    - Update.✔️
     - Clear/Limpiar.
     - Delete.
     - Read/Show/Select * from.
     - Messagebox: Showwarning, Showinfo, Showerror, Askyesno.
 - Database:✔️
-    - Tablas.
+    - Tablas.✔️

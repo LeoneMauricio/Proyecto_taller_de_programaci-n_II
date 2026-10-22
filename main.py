@@ -1,6 +1,9 @@
-#from db import crear_tabla
+from db import *
 from tkinter import *
 from agregar import ventana_agregar
+from actualizar import ventana_actualizar
+from actualizar import *
+
 #crear_tabla()
 
 def ventana_producto():
@@ -19,7 +22,8 @@ def ventana_modificar():
 
 ventana_principal = Tk()
 ventana_principal.title("Registros de Productos")
-ventana_principal.geometry("500x500")
+# Maximiza la ventana después de crearla
+ventana_principal.after(100, lambda: ventana_principal.state("zoomed"))
 ventana_principal.resizable(0,0)
 
 Label(
@@ -46,11 +50,10 @@ Button(
 Button(
     ventana_principal,
     text="Modifcar productos",
-    command=ventana_modificar
+    command=ventana_actualizar
 ).pack(pady=5)
 
 
 ventana_principal.mainloop()
 
 
- 
