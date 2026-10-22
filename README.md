@@ -1,6 +1,7 @@
 Lista de tareas:
 
 - Interfaz gráfica:
+    - Ventana Principal. ✔️
     - Labels.
     - Buttons.
     - Entry.
@@ -11,6 +12,5 @@ Lista de tareas:
     - Delete.
     - Read/Show/Select * from.
     - Messagebox: Showwarning, Showinfo, Showerror, Askyesno.
-- Database:
+- Database: Valentin ✔️
     - Tablas.
-    - UDF/ABM.
