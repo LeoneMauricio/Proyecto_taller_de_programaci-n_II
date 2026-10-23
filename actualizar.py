@@ -38,10 +38,6 @@ def ventana_actualizar():
                 "Atención",
                 "No existe un producto con ese ID", parent=ventana)
             return
-        
-        entrada_nombre.delete(0, "end")
-        entrada_descripcion.delete(0, "end")
-        entrada_precio.delete(0, "end")
 
         entrada_nombre.insert(0, producto[1])
         entrada_descripcion.insert(0, producto[2])
@@ -56,11 +52,14 @@ def ventana_actualizar():
 
 
     def modificar():
-        id_par = entrada_id.get()
-        nom = entrada_nombre.get()
-        des = entrada_descripcion.get()
-        prec = entrada_precio.get()
-
+        if not (entrada_nombre.get()== "" or entrada_descripcion.get()== ""):
+            id_par = entrada_id.get()
+            nom = entrada_nombre.get()
+            des = entrada_descripcion.get()
+            prec = entrada_precio.get()
+        else:
+            messagebox.showerror("Error", "Los campos deben ser llenados",parent=ventana)
+            return
         try:
             id_producto = int(id_par)
         except ValueError:
@@ -73,10 +72,22 @@ def ventana_actualizar():
                 messagebox.showwarning("Atencion","Los precios deben ser positivos", parent=ventana)
                 return
         except ValueError:
-            messagebox.showerror("Error","Debe ingresar numeros",parent=ventana)
+            messagebox.showerror("Error","Debe ingresar el precio",parent=ventana)
         else:
-            actualizar(nom,des,prec,id_producto)
-            #messagebox.showinfo("Correcto","Producto Acualizado", parent=ventana)
+            filas = actualizar(nom,des,prec,id_producto)
+            if  filas > 0:
+                    messagebox.showinfo(
+                        "Correcto",
+                        "Producto actualizado correctamente.",parent=ventana)
+            else:
+                messagebox.showwarning(
+                    "Atención",
+                    "No se encontró el producto",parent=ventana)
+        entrada_id.delete(0, END)
+        entrada_nombre.delete(0, END)
+        entrada_descripcion.delete(0, END)
+        entrada_precio.delete(0, END)
+        
         
     boton_actualizar = Button(
         ventana,
@@ -90,3 +101,5 @@ def ventana_actualizar():
         command= volver
     )
     boton_volver.pack(pady=5)
+    
+    ventana.mainloop()

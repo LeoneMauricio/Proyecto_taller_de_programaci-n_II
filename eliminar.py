@@ -37,3 +37,5 @@ def ventana_eliminar():
         command =eliminado
     )
     boton_eliminar.pack(pady=5)
+    
+    ventana.mainloop()

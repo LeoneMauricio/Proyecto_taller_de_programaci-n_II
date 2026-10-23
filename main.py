@@ -3,13 +3,10 @@ from tkinter import *
 from agregar import ventana_agregar
 from actualizar import ventana_actualizar
 from eliminar import ventana_eliminar
+from mostrar import ventana_productos
 
-#crear_tabla()
+crear_tabla()
 
-def ventana_producto():
-    ventana = Tk()
-    ventana.title("Mis productos")
-    ventana.geometry("500x500")    
 
 ventana_principal = Tk()
 ventana_principal.title("Registros de Productos")
@@ -26,7 +23,7 @@ Label(
 Button(
     ventana_principal,
     text="Mis productos",
-    command= ventana_producto
+    command= ventana_productos
 ).pack(pady=5)
 Button(
     ventana_principal,
@@ -36,8 +33,8 @@ Button(
 Button(
     ventana_principal,
     text="Eliminar productos",
-    command= ventana_eliminar
-).pack(pady=5)
+    command=lambda: [ventana_eliminar(), ventana_productos()]
+).pack()
 Button(
     ventana_principal,
     text="Modifcar productos",

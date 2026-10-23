@@ -59,3 +59,5 @@ def ventana_agregar():
         command= volver
     )
     boton_volver.pack(pady=5)
+    
+    ventana.mainloop()

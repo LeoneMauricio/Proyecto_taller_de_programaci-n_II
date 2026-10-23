@@ -1,5 +1,4 @@
 import sqlite3
-from tkinter import messagebox
 def conexion():
     con = sqlite3.connect("productos.db")
     return con
@@ -14,6 +13,7 @@ descripcion TEXT NOT NULL,
 precio REAL NOT NULL)""")
     con.commit()
     con.close()
+
 def insertar(nombre, descripcion, precio):
     con = conexion()
     cursor = con.cursor()
@@ -21,6 +21,7 @@ def insertar(nombre, descripcion, precio):
                 (nombre, descripcion, precio))
     con.commit()
     con.close()
+
 def obtener_todos():
     con = conexion()
     cursor = con.cursor()
@@ -28,6 +29,7 @@ def obtener_todos():
     productos = cursor.fetchall()
     con.close()
     return productos
+
 def eliminar(id):
     con = conexion()
     cursor = con.cursor()
@@ -36,6 +38,7 @@ def eliminar(id):
     filas = cursor.rowcount
     con.close()
     return filas
+
 def actualizar(nom, des, prec, id_producto):
     con = conexion()
     cursor = con.cursor()
@@ -44,16 +47,8 @@ def actualizar(nom, des, prec, id_producto):
     con.commit()
     filas = cursor.rowcount
     con.close()
-    if  filas > 0:
-        messagebox.showinfo(
-            "Correcto",
-            "Producto actualizado correctamente.",
-        )
-    else:
-        messagebox.showwarning(
-            "Atención",
-            "No se encontró el producto"
-        )
+    return filas
+
 def obtener_por_id(id):
     con = conexion()
     cursor = con.cursor()
