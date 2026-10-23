@@ -28,6 +28,3 @@ def ventana_productos():
     tabla.pack(fill="both", expand=True)
 
 
-    ventana.mainloop()
-
-

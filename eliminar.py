@@ -38,4 +38,3 @@ def ventana_eliminar():
     )
     boton_eliminar.pack(pady=5)
     
-    ventana.mainloop()

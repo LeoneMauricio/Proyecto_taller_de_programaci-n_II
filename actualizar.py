@@ -102,4 +102,3 @@ def ventana_actualizar():
     )
     boton_volver.pack(pady=5)
     
-    ventana.mainloop()
